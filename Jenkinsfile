@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('rayan-dockerhub-password')
         SONAR_TOKEN           = credentials('rayan-sonar-token')
-        DOCKER_IMAGE          = "${DOCKERHUB_CREDENTIALS_USR}/tasklist-backend"
+        DOCKER_IMAGE          = "${DOCKERHUB_CREDENTIALS_USR}/tasklist-frontend"
         DOCKER_TAG            = "${env.BUILD_NUMBER}"
     }
 
@@ -17,7 +17,6 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
-                sh 'npx prisma generate --schema prisma/schema-test.prisma'
                 sh 'npm run test:coverage'
             }
             post {
