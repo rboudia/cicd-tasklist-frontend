@@ -12,7 +12,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh 'npm ci'
-                sh 'npx prisma generate'
             }
         }
 
