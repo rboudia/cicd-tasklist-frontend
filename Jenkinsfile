@@ -132,10 +132,10 @@ pipeline {
             cleanWs()
         }
         success {
-            echo 'Backend pipeline completed successfully!'
+            echo 'Frontend pipeline completed successfully!'
         }
         failure {
-            echo 'Backend pipeline failed!'
+            echo 'Frontend pipeline failed!'
         }
     }
 }
